@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Adrian Lucas</title>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="main-menu animate__animated animate__bounceIn"
+        onclick="menuFunction(this)"
+      >
+        <div class="menu-bar-1"></div>
+        <div class="menu-bar-2"></div>
+        <div class="menu-bar-3"></div>
+        <div class="dropdown-content animate__animated animate__fadeInLeft-2s">
+          <a href="#">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="brand-icon">AL</p>
+        <h1 class="title-name">Adrian Lucas</h1>
+        <h1 class="title">Web Developer</h1>
+        <h2 class="intro-text-1">HTML</h2>
+        <h2 class="intro-text-2">CSS</h2>
+        <h2 class="intro-text-3">JavaScript</h2>
+        <h2 class="intro-text-4">NodeJS</h2>
+      </div>
+    </div>
+    <!--******************Projects*******************************-->
+    <div class="container" id="projects">
+      <p class="advert">More projects are coming soon!</p>
+      <div class="project_window" id="project_container">
+        <span class="close" onclick="closeProjects()">&times;</span>
+        <span
+          class="project_window__span animate__animated animate__bounceIn"
+          id="project_window"
+        >
+          <div class="tictactoe_container" id="tictactoeContainer">
+            <h2 class="game_message"></h2>
+            <div class="row">
+              <div class="box" id="0"></div>
+              <div class="box" id="1"></div>
+              <div class="box" id="2"></div>
+            </div>
+            <div class="row">
+              <div class="box" id="3"></div>
+              <div class="box" id="4"></div>
+              <div class="box" id="5"></div>
+            </div>
+            <div class="row">
+              <div class="box" id="6"></div>
+              <div class="box" id="7"></div>
+              <div class="box" id="8"></div>
+            </div>
+          </div>
+          <button class="tictactoe_restart">Restart</button>
+          
+        </span>
+      </div>
+      <button class="project_button" id="tictac" onclick="tictac()">
+        XOXO
+      </button>
+      <button class="project_button" id="quiz" onclick="quiz()">Quiz</button>
+      <button class="project_button" id="maps" onclick="maps()">Maps</button>
+      <button class="project_button" id="chat" onclick="chat()">Chat</button>
+    </div>
+    <!--******************About me*******************************-->
+    <div class="container" id="about">
+      <div class="about-text">
+        <h1 class="title-about">About Me!</h1>
+        <p class="text_about">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+          felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+          consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+          nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+          venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+          Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
+          vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat
+          vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
+          quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
+          laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
+          augue. Curabitur ullamcorper ultricies nisi
+        </p>
+      </div>
+    </div>
+    <!--******************Contact*******************************-->
+    <div class="container-contact_page" id="contact">
+      <div class="container_contact-form">
+        <h1 class="title-about">Contact Me!</h1>
+        <div class="fcf-body">
+          <div id="fcf-form">
+            <form
+              id="fcf-form-id"
+              class="fcf-form-class"
+              method="post"
+              action="contact.php"
+            >
+              <div class="fcf-form-group">
+                <label for="Name" class="fcf-label">Your name</label>
+                <div class="fcf-input-group">
+                  <input
+                    type="text"
+                    id="Name"
+                    name="Name"
+                    class="fcf-form-control"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="fcf-form-group">
+                <label for="Email" class="fcf-label">Your email address</label>
+                <div class="fcf-input-group">
+                  <input
+                    type="email"
+                    id="Email"
+                    name="Email"
+                    class="fcf-form-control"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="fcf-form-group">
+                <label for="Message" class="fcf-label">Your message</label>
+                <div class="fcf-input-group">
+                  <textarea
+                    id="Message"
+                    name="Message"
+                    class="fcf-form-control"
+                    rows="6"
+                    maxlength="3000"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="fcf-form-group">
+                <button
+                  type="submit"
+                  id="fcf-button"
+                  class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Js files/index.js"></script>
+    <script src="contact.php"></script>
+  </body>
+</html>
