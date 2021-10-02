@@ -3,24 +3,24 @@ let quizBtn = document.getElementById("quiz");
 let mapsBtn = document.getElementById("maps");
 let chatBtn = document.getElementById("chat");
 let projectContainer = document.getElementById("project_container");
-let projectWindow = document.getElementById("project_window");
+let xoxoWindow = document.getElementById("tictactoe_window");
 let tictactoeContainer = document.getElementById("tictactoeContainer");
+let quizWindow = document.getElementById("quiz_window");
 
 function menuFunction(x) {
   x.classList.toggle("change");
-}
-function projectShow() {
-  projectContainer.style.display = "block";
-  projectWindow.style.visibility = "visible";
 }
 
 function closeProjects() {
   projectContainer.style.display = "none";
   tictactoeContainer.style.display = "none";
+  quizWindow.style.visibility = "hidden";
 }
 
 //////////////////////Tic Tac Toe Game//////////////////////////////////////////
 function tictac() {
+  projectContainer.style.display = "block";
+  xoxoWindow.style.visibility = "visible";
   projectShow();
   tictactoeContainer.style.display = "grid";
   let player = "X";
@@ -109,6 +109,25 @@ function tictac() {
     gameMessage.innerHTML = `It's ${player} turn`;
   }
 }
-function quiz() {}
+
+function quiz() {
+  projectContainer.style.display = "block";
+  quizWindow.style.visibility = "visible";
+
+  const questions = [
+    {
+      question: "How are you",
+      answer1: "Fine",
+      answer2: "Bad",
+      answer3: "Hungry",
+    },
+    {
+      question: "What's your name",
+      answer1: "Dan",
+      answer2: "Brad",
+      answer3: "Harry",
+    },
+  ];
+}
 function maps() {}
 function chat() {}
