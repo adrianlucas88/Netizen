@@ -21,7 +21,6 @@ function closeProjects() {
 function tictac() {
   projectContainer.style.display = "block";
   xoxoWindow.style.visibility = "visible";
-  projectShow();
   tictactoeContainer.style.display = "grid";
   let player = "X";
   const gameMessage = document.querySelector(".game_message");
@@ -93,10 +92,12 @@ function tictac() {
           .querySelectorAll(".box")
           .forEach((box) => box.removeEventListener("click", boxClicked));
       }
+
       if (
         playedBoxX.length === 5 &&
         elem.every((el) => !playedBoxX.includes(el))
       ) {
+        console.log(" It's a draw");
         gameMessage.innerHTML = " It's a draw";
       }
     });
