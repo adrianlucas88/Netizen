@@ -128,18 +128,20 @@ body {
 *****************************************************************/
 #projects {
   display: block;
+  margin: 10% 0;
 }
 .project_button {
-  margin: 20rem 0 0 10%;
+  margin: 20rem 0 0 25%;
   width: 15rem;
   height: 15rem;
   font-family: pixelfont;
   font-size: 4.7rem;
   background-color: #fcecdd;
-  border-radius: 50%;
+  border-radius: 10%;
   border: 1rem solid #ff6701;
 }
 .advert {
+  width: 100%;
   color: #ffc288;
   font-size: 2rem;
   text-align: center;
@@ -159,11 +161,11 @@ body {
 .project_window__span {
   visibility: hidden;
   position: absolute;
-  width: 50rem;
-  height: 50rem;
+  width: 40rem;
+  height: 40rem;
   background-color: white;
-  border-radius: 50%;
-  margin: 5% 30%;
+  border-radius: 10%;
+  margin: 10% 32%;
   text-align: center;
   transition: 1s;
 }
@@ -193,7 +195,7 @@ body {
   width: 30rem;
   height: 30rem;
   z-index: 1;
-  margin: 20%;
+  margin: 13% 12%;
 }
 .row {
   display: flex;
@@ -209,14 +211,15 @@ body {
 
 .tictactoe_restart {
   font-family: pixelfont;
+  color: white;
   font-size: 2rem;
   position: fixed;
   border: none;
-  width: 20rem;
+  width: 10rem;
   height: 5rem;
   background-color: #ff6701;
-  border-radius: 50%;
-  margin: -15% 0 0 -20%;
+  border-radius: 10%;
+  margin: 0 0 0 -10%;
 }
 .tictactoe_restart:hover {
   background-color: #ffc288;
@@ -233,6 +236,41 @@ body {
 /****************************************************************
 *********************Quiz**********************************
 *****************************************************************/
+.quiz__question {
+  font-size: 3rem;
+  margin: 20%;
+}
+.quiz__answers-container {
+  height: 10rem;
+  list-style-type: none;
+  margin: 0 10% 10%;
+  font-size: 2rem;
+  padding: 0;
+}
+.answer {
+  display: inline-flex;
+  background-color: white;
+  width: 10rem;
+  height: 2.5rem;
+  border: 0.1rem solid #ff6701;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+.quiz__btn-next {
+  width: 10rem;
+  height: 4rem;
+  border: 0.1rem solid #ff6701;
+  border-radius: 1rem;
+  margin: 1rem;
+  font-size: 3rem;
+  background-color: #ffc288;
+}
+.answer:hover,
+.quiz__btn-next:hover {
+  background-color: #ff6701;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
 /****************************************************************
 *********************About Me**********************************
@@ -263,13 +301,18 @@ body {
 *****************************************************************/
 
 .container-contact_page {
-  display: block;
-  height: 97vh;
+  height: auto;
   width: 98.5vw;
+  background-color: black;
+  border-top: #ff6701 0.5rem solid;
 }
 .container_contact-form {
   width: 40%;
   margin: auto;
+}
+.contact {
+  padding: 0;
+  font-size: 4rem;
 }
 #fcf-form {
   display: block;

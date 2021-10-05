@@ -35,8 +35,8 @@
         <h1 class="title">Web Developer</h1>
         <h2 class="intro-text-1">HTML</h2>
         <h2 class="intro-text-2">CSS</h2>
+        <h2 class="intro-text-2">SASS</h2>
         <h2 class="intro-text-3">JavaScript</h2>
-        <h2 class="intro-text-4">React</h2>
       </div>
     </div>
     <!--******************Projects*******************************-->
@@ -44,6 +44,7 @@
       <p class="advert">More projects are coming soon!</p>
       <div class="project_window" id="project_container">
         <span class="close" onclick="closeProjects()">&times;</span>
+        <!--******************Tic Tac Toe*******************************-->
         <span
           class="project_window__span animate__animated animate__bounceIn"
           id="tictactoe_window"
@@ -68,19 +69,25 @@
           </div>
           <button class="tictactoe_restart">Restart</button>
         </span>
-
+        <!--******************Quiz*******************************-->
         <span
           class="project_window__span animate__animated animate__bounceIn"
           id="quiz_window"
         >
+          <h2 class="quiz__question" id="quiz-question"></h2>
+          <ul class="quiz__answers-container">
+            <li id="answer1" class="answer">AAAAAA</li>
+            <li id="answer2" class="answer">BBBB</li>
+            <li id="answer3" class="answer">CCC</li>
+            <li id="answer4" class="answer">CCC</li>
+          </ul>
+          <button class="quiz__btn-next">Next</button>
         </span>
       </div>
       <button class="project_button" id="tictac" onclick="tictac()">
         XOXO
       </button>
       <button class="project_button" id="quiz" onclick="quiz()">Quiz</button>
-      <button class="project_button" id="maps" onclick="maps()">Maps</button>
-      <button class="project_button" id="chat" onclick="chat()">Chat</button>
     </div>
     <!--******************About me*******************************-->
     <div class="container" id="about">
@@ -106,7 +113,7 @@
     <!--******************Contact*******************************-->
     <div class="container-contact_page" id="contact">
       <div class="container_contact-form">
-        <h1 class="title-about">Contact Me!</h1>
+        <h1 class="title-about contact">Contact Me!</h1>
         <div class="fcf-body">
           <div id="fcf-form">
             <form
@@ -169,7 +176,7 @@
         </div>
       </div>
     </div>
-    <script src="/Js files/index.js"></script>
+    <script type="module" src="/Js files/index.js"></script>
     <script src="contact.php"></script>
   </body>
 </html>

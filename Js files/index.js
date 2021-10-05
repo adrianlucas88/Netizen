@@ -1,3 +1,4 @@
+import { questions } from "./quiz-text";
 let tictacBtn = document.getElementById("tictac");
 let quizBtn = document.getElementById("quiz");
 let mapsBtn = document.getElementById("maps");
@@ -6,6 +7,9 @@ let projectContainer = document.getElementById("project_container");
 let xoxoWindow = document.getElementById("tictactoe_window");
 let tictactoeContainer = document.getElementById("tictactoeContainer");
 let quizWindow = document.getElementById("quiz_window");
+let tictacRestart = document.querySelector(".tictactoe_restart");
+let qQuestion = document.getElementById("quiz-question");
+let qBtnNext = document.getElementsByClassName("quiz__btn-next");
 
 function menuFunction(x) {
   x.classList.toggle("change");
@@ -22,6 +26,7 @@ function tictac() {
   projectContainer.style.display = "block";
   xoxoWindow.style.visibility = "visible";
   tictactoeContainer.style.display = "grid";
+  tictacRestart.style.visibility = "visible";
   let player = "X";
   const gameMessage = document.querySelector(".game_message");
   let boxNo, box, boxId;
@@ -31,9 +36,7 @@ function tictac() {
       .querySelectorAll(".box")
       .forEach((box) => box.addEventListener("click", boxClicked));
   }
-  document
-    .querySelector(".tictactoe_restart")
-    .addEventListener("click", restartBut);
+  tictacRestart.addEventListener("click", restartBut);
   clickOn();
   //Set array with winning rules
   const winGames = [
@@ -44,7 +47,7 @@ function tictac() {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 8],
+    [2, 4, 6],
   ];
   //Setup arrays to save each player progress
   let playedBoxX = [];
@@ -92,13 +95,9 @@ function tictac() {
           .querySelectorAll(".box")
           .forEach((box) => box.removeEventListener("click", boxClicked));
       }
-
-      if (
-        playedBoxX.length === 5 &&
-        elem.every((el) => !playedBoxX.includes(el))
-      ) {
-        console.log(" It's a draw");
-        gameMessage.innerHTML = " It's a draw";
+      if (playedBoxX.length === 5 && gameMessage.innerHTML != " X Won") {
+        console.log("draw");
+        gameMessage.innerHTML = "It's a draw";
       }
     });
   }
@@ -114,21 +113,8 @@ function tictac() {
 function quiz() {
   projectContainer.style.display = "block";
   quizWindow.style.visibility = "visible";
+  tictacRestart.style.visibility = "hidden";
 
-  const questions = [
-    {
-      question: "How are you",
-      answer1: "Fine",
-      answer2: "Bad",
-      answer3: "Hungry",
-    },
-    {
-      question: "What's your name",
-      answer1: "Dan",
-      answer2: "Brad",
-      answer3: "Harry",
-    },
-  ];
+  qQuestion.innerHTML = questions[0].question;
+  qAnswers.innerHTML = questions[0].answer1;
 }
-function maps() {}
-function chat() {}
