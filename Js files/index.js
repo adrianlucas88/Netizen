@@ -1,4 +1,3 @@
-import { questions } from "./quiz-text";
 let tictacBtn = document.getElementById("tictac");
 let quizBtn = document.getElementById("quiz");
 let mapsBtn = document.getElementById("maps");
@@ -114,7 +113,4 @@ function quiz() {
   projectContainer.style.display = "block";
   quizWindow.style.visibility = "visible";
   tictacRestart.style.visibility = "hidden";
-
-  qQuestion.innerHTML = questions[0].question;
-  qAnswers.innerHTML = questions[0].answer1;
 }

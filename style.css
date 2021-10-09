@@ -8,12 +8,14 @@ heavy oj: #ff6701
   font-family: pixelfont;
   src: url(Fonts/hackbot-font/HackbotFreeTrial-8MgA2.otf);
 }
+html {
+  font-size: 16px;
+}
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(Images/bg-grid.gif) 50% 0 repeat;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 .container {
   height: 97vh;
@@ -26,15 +28,18 @@ body {
   font-size: 6rem;
   color: whitesmoke;
   width: 100%;
-  padding-top: 7rem;
+  height: 100%;
+  padding-top: 2rem;
 }
 .title {
+  display: block;
   text-align: center;
   font-family: pixelfont;
   font-size: 6rem;
   color: #ff6701;
-  margin: 4rem 0 6.3rem 0;
+  margin: 0 0 4rem 0;
   width: 100%;
+  height: 100%;
 }
 .brand-icon {
   font-family: pixelfont;
@@ -46,15 +51,14 @@ body {
   bottom: -5rem;
 }
 
-.intro-text-1,
-.intro-text-2,
-.intro-text-3,
-.intro-text-4 {
+.intro-text {
+  display: block;
   font-family: pixelfont;
   font-size: 3.5rem;
   color: whitesmoke;
   text-align: center;
   width: 100%;
+  height: 100%;
 }
 
 /***************************************************************
@@ -76,7 +80,7 @@ body {
   transition: 0.5s;
 }
 .change .menu-bar-1 {
-  transform: rotate(-45deg) translate(-11px, 19px);
+  transform: rotate(-45deg) translate(-0.73rem, 1.2rem);
   background-color: #ffc288;
   margin-left: 20rem;
 }
@@ -86,7 +90,7 @@ body {
 }
 
 .change .menu-bar-3 {
-  transform: rotate(45deg) translate(-3px, -12px);
+  transform: rotate(45deg) translate(-0.23rem, -00.75rem);
   background-color: #ffc288;
   margin-left: 20rem;
 }
@@ -101,7 +105,7 @@ body {
 .dropdown-content a {
   color: #ffc288;
   display: none;
-  padding: 15px 16px;
+  padding: 0.9rem 1rem;
   text-decoration: none;
   text-align: center;
   font-size: 2.5rem;
@@ -131,6 +135,7 @@ body {
   margin: 10% 0;
 }
 .project_button {
+  display: inline-block;
   margin: 20rem 0 0 25%;
   width: 15rem;
   height: 15rem;
@@ -466,12 +471,22 @@ input[type="button"].fcf-btn-block {
   width: 100%;
 }
 
+.footer {
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  background: black;
+  color: gray;
+  text-align: center;
+  font-size: 1.5rem;
+}
 /****************************************************************
 ******************Media queries***************************
 *****************************************************************/
 
-@media only screen and (max-width: 1530px) {
-  .photo-container {
-    display: none;
+@media only screen and (max-width: 1300px) {
+  html {
+    font-size: 12px;
+    overflow: hidden;
   }
 }
