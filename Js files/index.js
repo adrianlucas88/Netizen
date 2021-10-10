@@ -9,7 +9,7 @@ let quizWindow = document.getElementById("quiz_window");
 let tictacRestart = document.querySelector(".tictactoe_restart");
 let qQuestion = document.getElementById("quiz-question");
 let qBtnNext = document.getElementsByClassName("quiz__btn-next");
-
+let qAnswer = document.getElementsByClassName("answer");
 function menuFunction(x) {
   x.classList.toggle("change");
 }
@@ -113,4 +113,15 @@ function quiz() {
   projectContainer.style.display = "block";
   quizWindow.style.visibility = "visible";
   tictacRestart.style.visibility = "hidden";
+  qQuestion.innerHTML = quizQA[0].question;
+  let answers1 = [
+    quizQA.answer1,
+    quizQA.answer2,
+    quizQA.answer3,
+    quizQA.answer4,
+  ];
+  console.log(answers1);
+  for (let i = 0; i < qAnswer.length; i++) {
+    qAnswer[i].innerHTML = answers1[i];
+  }
 }

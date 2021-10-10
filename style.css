@@ -260,6 +260,7 @@ body {
   border: 0.1rem solid #ff6701;
   border-radius: 1rem;
   margin: 1rem;
+  justify-content: center;
 }
 .quiz__btn-next {
   width: 10rem;
