@@ -255,33 +255,24 @@ body {
 }
 .answer {
   display: inline-flex;
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   background-color: white;
-  width: 10rem;
-  height: 2.5rem;
+  width: 12rem;
   border: 0.1rem solid #ff6701;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 1.5rem;
+  text-align: center;
   justify-content: center;
-}
-.quiz__btn-next {
-  width: 10rem;
-  height: 4rem;
-  border: 0.1rem solid #ff6701;
-  border-radius: 1rem;
-  margin: 1rem;
-  font-size: 3rem;
-  background-color: #ffc288;
 }
 .answer:hover,
 .quiz__btn-next:hover {
-  background-color: #ff6701;
+  background-color: #fea82f;
   cursor: pointer;
   transition: 0.3s;
 }
 .answer:focus {
-  background-color: #fea82f;
+  background-color: #ff6701;
 }
 /****************************************************************
 *********************About Me**********************************

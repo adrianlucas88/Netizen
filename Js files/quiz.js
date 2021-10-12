@@ -1,17 +1,35 @@
 let quizWindow = document.getElementById("quiz_window");
 let qQuestion = document.getElementById("quiz-question");
-let qBtnNext = document.getElementsByClassName("quiz__btn-next");
-let qAnswer = document.getElementsByClassName("answer");
+let qAnswer = document.querySelectorAll(".answer");
+let butClick;
 
 function quiz() {
   projectContainer.style.display = "block";
   quizWindow.style.visibility = "visible";
   tictacRestart.style.visibility = "hidden";
-  // qBtnNext.addEventListener("click", nextQ);
-  // function nextQ() {}
-  console.log(quizCat);
+
   for (let i = 0; i < qAnswer.length; i++) {
-    qAnswer[i].innerHTML = quizCat[i];
+    qAnswer[i].textContent = quizCat[i];
+  }
+  qAnswer.forEach((element) => element.addEventListener("click", pickAnswer));
+  function pickAnswer(e) {
+    butClick = e.target;
+
+    if (butClick.textContent === quizCat[0]) {
+      qQuestion.textContent = Science.quest1.question;
+      for (let i = 0; i < qAnswer.length; i++) {
+        qAnswer[i].textContent = Science.quest1.answer[i];
+      }
+      
+      }
+    
+    if (butClick.textContent === quizCat[1]) {
+      qQuestion.textContent = Science.quest2.question;
+      for (let i = 0; i < qAnswer.length; i++) {
+        qAnswer[i].textContent = Informatics.quest1.answer[i];
+      }
+    }if (butClick.textContent === Science.quest1.correct) {
+      console.log("Corect");
   }
 }
 
@@ -19,53 +37,33 @@ const quizCat = ["Science", "Informatics", "General", "History"];
 
 const Science = {
   quest1: {
-    question: "How What color is cobalt?",
-    answer1: "Green",
-    answer2: "Blue",
-    answer3: "Yellow",
-    answer4: "Red",
+    question: "What color is cobalt?",
+    answer: ["Green", "Blue", "Yellow", "Red"],
     correct: "Blue",
   },
   quest2: {
     question: "What is the lightest existing metal?",
-    answer: "Copper",
-    answer: "Iron",
-    answer: "Aluminium",
-    answer: "	Silver",
     correct: "Aluminium",
   },
   quest3: {
     question: "Which planet is nearest the sun?",
-    answer: "Mercury",
-    answer: "Terra",
-    answer: "Pluto",
-    answer: "Saturn",
-    correct: "Mercury",
+    answer: ["Mercury", "Terra", "Pluto", "Saturn"],
+    correct: "Mercury"
   },
 };
 const Informatics = {
   quest1: {
     question: "In what year was Google launched on the web?",
-    answer1: "1995",
-    answer2: "2000",
-    answer3: "2001",
-    answer4: "1998",
     correct: "1998",
   },
   quest2: {
     question: "Which unit is an indication for the sound quality of MP3?",
-    answer: "Gbps",
-    answer: "Mbps",
-    answer: "Kbps",
-    answer: "Kg",
+    answer: ["Gbps", "Mbps", "Kbps", "Kg"],
     correct: "Kbps",
   },
   quest3: {
     question: "What is the country top-level domain of Belgium?",
-    answer: ".com",
-    answer: ".info",
-    answer: ".tech",
-    answer: ".be",
+    answer: [".com", ".info", ".tech", ".be"],
     correct: ".be",
   },
 };
