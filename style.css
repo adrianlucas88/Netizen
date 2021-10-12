@@ -264,6 +264,7 @@ body {
   margin: 1.5rem;
   text-align: center;
   justify-content: center;
+  transition: 0.5s;
 }
 .answer:hover,
 .quiz__btn-next:hover {
@@ -271,7 +272,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.answer:focus {
+.answer:active {
   background-color: #ff6701;
 }
 /****************************************************************
