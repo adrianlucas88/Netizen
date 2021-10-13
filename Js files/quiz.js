@@ -19,12 +19,24 @@ function quiz() {
 
     if (butClick.textContent === quizCat[0]) {
       qQuestion.textContent = Science.quest1.question;
-
       for (let i = 0; i < qAnswer.length; i++) {
         qAnswer[i].textContent = Science.quest1.answer[i];
+
+        if (butClick.textContent === Science.quest1.answer[i]) {
+          qQuestion.textContent = Science.quest2.question;
+          for (let i = 0; i < qAnswer.length; i++) {
+            qAnswer[i].textContent = Science.quest2.answer[i];
+
+            if (butClick === Science.quest2.answer[i]) {
+              qQuestion.textContent = Science.quest3.question;
+              for (let i = 0; i < qAnswer.length; i++) {
+                qAnswer[i].textContent = Science.quest3.answer[i];
+              }
+            }
+          }
+        }
       }
     }
-
     if (butClick.textContent === quizCat[1]) {
       qQuestion.textContent = Informatics.quest1.question;
 
