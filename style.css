@@ -254,7 +254,7 @@ body {
   padding: 0;
 }
 .answer {
-  display: inline-flex;
+  display: none;
   font-size: 2rem;
   font-weight: 700;
   background-color: white;
@@ -274,6 +274,9 @@ body {
 }
 .answer:active {
   background-color: #ff6701;
+}
+#sparkle {
+  height: 0;
 }
 /****************************************************************
 *********************About Me**********************************

@@ -1,69 +1,41 @@
 let quizWindow = document.getElementById("quiz_window");
 let qQuestion = document.getElementById("quiz-question");
 let qAnswer = document.querySelectorAll(".answer");
-let butClick;
+let qImage = document.getElementById("sparkle");
+let butClick, userPoints;
 const quizCat = ["Science", "Informatics", "General", "History"];
 
 function quiz() {
   projectContainer.style.display = "block";
   quizWindow.style.visibility = "visible";
   tictacRestart.style.visibility = "hidden";
+  qImage.style.height = "0";
   qQuestion.innerHTML = "Pick a Category";
+  qAnswer.forEach((element) => (element.style.display = "inline-flex"));
+  userPoints = 0;
 
   for (let i = 0; i < qAnswer.length; i++) {
     qAnswer[i].textContent = quizCat[i];
   }
   qAnswer.forEach((element) => element.addEventListener("click", pickAnswer));
-  function pickAnswer(e) {
-    butClick = e.target;
-
+  function pickAnswer(event) {
+    butClick = event.target;
+    qImage.style.height = "0";
+    qAnswer.forEach((element) => (element.style.display = "inline-flex"));
     if (butClick.textContent === quizCat[0]) {
       qQuestion.textContent = Science.quest1.question;
       for (let i = 0; i < qAnswer.length; i++) {
         qAnswer[i].textContent = Science.quest1.answer[i];
         console.log("first");
-        qAnswer[i].addEventListener("click", goQuest2);
       }
+      qAnswer.forEach((element) => element.addEventListener("click", goQuest2));
     }
 
     if (butClick.textContent === quizCat[1]) {
       qQuestion.textContent = Informatics.quest1.question;
-
       for (let i = 0; i < qAnswer.length; i++) {
         qAnswer[i].textContent = Informatics.quest1.answer[i];
         qAnswer[i].addEventListener("click", goQuest2);
-      }
-    }
-    function goQuest2() {
-      if (qQuestion.textContent === Science.quest1.question) {
-        qQuestion.textContent = Science.quest2.question;
-        for (let i = 0; i < qAnswer.length; i++) {
-          qAnswer[i].textContent = Science.quest2.answer[i];
-          qAnswer[i].addEventListener("click", goQuest3);
-          console.log("second");
-        }
-      }
-      if (qQuestion.textContent === Informatics.quest1.question) {
-        qQuestion.textContent = Informatics.quest2.question;
-        for (let i = 0; i < qAnswer.length; i++) {
-          qAnswer[i].textContent = Informatics.quest2.answer[i];
-          qAnswer[i].addEventListener("click", goQuest3);
-        }
-      }
-    }
-    function goQuest3() {
-      if (qQuestion.textContent === Science.quest2.question) {
-        qQuestion.textContent = Science.quest3.question;
-        for (let i = 0; i < qAnswer.length; i++) {
-          qAnswer[i].textContent = Science.quest3.answer[i];
-          console.log("third");
-        }
-      }
-      if (qQuestion.textContent === Informatics.quest2.question) {
-        qQuestion.textContent = Informatics.quest3.question;
-        for (let i = 0; i < qAnswer.length; i++) {
-          qAnswer[i].textContent = Informatics.quest3.answer[i];
-        }
       }
     }
     if (
@@ -74,8 +46,50 @@ function quiz() {
       butClick.textContent === Informatics.quest2.correct ||
       butClick.textContent === Informatics.quest3.correct
     ) {
-      console.log("Corect");
+      userPoints = userPoints + 1;
     }
+  }
+  function goQuest2() {
+    if (qQuestion.textContent === Science.quest1.question) {
+      qQuestion.textContent = Science.quest2.question;
+      for (let i = 0; i < qAnswer.length; i++) {
+        qAnswer[i].textContent = Science.quest2.answer[i];
+        qAnswer[i].addEventListener("click", goQuest3);
+        console.log("second");
+      }
+    }
+    if (qQuestion.textContent === Informatics.quest1.question) {
+      qQuestion.textContent = Informatics.quest2.question;
+      for (let i = 0; i < qAnswer.length; i++) {
+        qAnswer[i].textContent = Informatics.quest2.answer[i];
+        qAnswer[i].addEventListener("click", goQuest3);
+      }
+    }
+  }
+  function goQuest3() {
+    if (qQuestion.textContent === Science.quest2.question) {
+      qQuestion.textContent = Science.quest3.question;
+      for (let i = 0; i < qAnswer.length; i++) {
+        qAnswer[i].textContent = Science.quest3.answer[i];
+        console.log("third");
+        qAnswer[i].addEventListener("click", endScreen);
+      }
+    }
+    if (qQuestion.textContent === Informatics.quest2.question) {
+      qQuestion.textContent = Informatics.quest3.question;
+      for (let i = 0; i < qAnswer.length; i++) {
+        qAnswer[i].textContent = Informatics.quest3.answer[i];
+        qAnswer[i].addEventListener("click", endScreen);
+      }
+    }
+  }
+
+  function endScreen() {
+    qQuestion.innerHTML = `Your Score is: ${userPoints}/3`;
+    qAnswer.forEach((element) => (element.style.display = "none"));
+    qImage.style.height = "15rem";
+
+    console.log("end");
   }
 }
 const Science = {
