@@ -131,8 +131,7 @@ body {
 ********************* Projects**********************************
 *****************************************************************/
 #projects {
-  display: block;
-  margin: 10% 0;
+  display: flex;
 }
 .project_button {
   display: inline-block;
@@ -140,12 +139,15 @@ body {
   width: 15rem;
   height: 15rem;
   font-family: pixelfont;
-  font-size: 4.7rem;
+  font-size: 4rem;
   background-color: #fcecdd;
   border-radius: 10rem;
   border: 1rem solid #ff6701;
 }
-
+.project_button:first-child {
+  background-image: url(./Images/button.png);
+  background-size: cover;
+}
 .project_button:hover {
   background-color: #ffc288;
   cursor: pointer;
