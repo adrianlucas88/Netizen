@@ -10,6 +10,7 @@ heavy oj: #ff6701
 }
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -42,13 +43,19 @@ body {
   height: 100%;
 }
 .brand-icon {
-  font-family: pixelfont;
-  font-weight: 900;
-  color: #ff6701;
+  height: 5rem;
+  width: 5rem;
+  background: #ff6701;
   font-size: 5rem;
   position: fixed;
   right: 2rem;
-  bottom: -5rem;
+  bottom: 1rem;
+  border-radius: 5rem;
+}
+.brand-icon:hover {
+  cursor: pointer;
+  background-color: #ffc288;
+  transition: 1s;
 }
 
 .intro-text {
@@ -145,12 +152,35 @@ body {
   border: 1rem solid #ff6701;
 }
 .project_button:first-child {
-  background-image: url(./Images/button.png);
+  background: url(./Images/button.png);
   background-size: cover;
 }
 .project_button:hover {
-  background-color: #ffc288;
+  background-color: #ff6701;
   cursor: pointer;
+  transition: 0.5s;
+  border: 2rem solid #fcecdd;
+}
+.hide_butt {
+  display: none;
+  font-size: 3.5rem;
+  font-family: pixelfont;
+  color: #fcecdd;
+}
+.hide_butt:hover {
+  font-size: 3rem;
+  transition: 0.5s;
+}
+#github:hover {
+  width: 20rem;
+  height: 20rem;
+  font-size: 4rem;
+  border-radius: 2rem;
+  border: 0.5rem solid #fcecdd;
+}
+#github:hover .hide_butt {
+  display: flex;
+  justify-content: center;
 }
 
 /****************************************************************
@@ -347,15 +377,6 @@ input[type="button"].fcf-btn-block {
   width: 100%;
 }
 
-.footer {
-  display: block;
-  width: 100%;
-  height: 3.5rem;
-  background: black;
-  color: gray;
-  text-align: center;
-  font-size: 1.5rem;
-}
 /****************************************************************
 ******************Media queries***************************
 *****************************************************************/

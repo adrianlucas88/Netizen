@@ -30,7 +30,12 @@
         </div>
       </div>
       <div>
-        <p class="brand-icon">AL</p>
+        <img
+          class="brand-icon"
+          src="./Images/github.png"
+          onClick="parent.open('https://github.com/adrianlucas88?tab=repositories')"
+        />
+
         <h1 class="title-name">Adrian Lucas</h1>
         <h1 class="title">Web Developer</h1>
         <h2 class="intro-text">HTML</h2>
@@ -45,11 +50,18 @@
         class="project_button"
         onClick="parent.open('http://eugeneofficial.co.uk/')"
       ></button>
-      <button
-        class="project_button"
-        onClick="parent.open('https://github.com/adrianlucas88?tab=repositories')"
-      >
+      <button class="project_button" id="github">
         Github
+        <a
+          class="hide_butt"
+          onClick="parent.open('https://adrianlucas88.github.io/Quiz/')"
+          >Quiz</a
+        >
+        <a
+          class="hide_butt"
+          onClick="parent.open('https://adrianlucas88.github.io/Tictactoe/')"
+          >XOXO</a
+        >
       </button>
     </div>
     <!--******************About me*******************************-->
@@ -137,9 +149,6 @@
             </form>
           </div>
         </div>
-      </div>
-      <div class="footer">
-        Netizen® a Product of Adrian Lucas<br />Made with ❤ in London, U.K.
       </div>
     </div>
     <script src="./Js files/index.js"></script>
