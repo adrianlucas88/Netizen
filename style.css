@@ -101,6 +101,7 @@ body {
   background-color: #ffc288;
   margin-left: 20rem;
 }
+
 .dropdown-content {
   position: absolute;
   width: 0;
@@ -108,9 +109,10 @@ body {
   left: -1rem;
   background-color: #ff6701;
   border-radius: 50%;
+  transition: 0.5s;
 }
 .dropdown-content a {
-  color: #ffc288;
+  color: black;
   display: none;
   padding: 0.9rem 1rem;
   text-decoration: none;
@@ -128,7 +130,6 @@ body {
   width: 18rem;
   height: 18rem;
 }
-
 .dropdown-content a:hover {
   color: white;
   transition: 0.6s;
@@ -147,6 +148,7 @@ body {
   height: 15rem;
   font-family: pixelfont;
   font-size: 4rem;
+  font-weight: 700;
   background-color: #fcecdd;
   border-radius: 10rem;
   border: 1rem solid #ff6701;
@@ -201,11 +203,28 @@ body {
   color: white;
   padding-top: 5rem;
 }
+.about_shape {
+  display: flex;
+  background-color: #fcecdd;
+  margin: 0 10%;
+  align-items: center;
+}
+.author {
+  background: url("./Images/author.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5%;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 15rem;
+}
 .text_about {
   text-align: center;
   font-size: 2rem;
-  color: white;
-  margin: 10%;
+  width: 50%;
+  color: black;
+  overflow: auto;
 }
 /****************************************************************
 *********************Contact Me**********************************
@@ -213,7 +232,8 @@ body {
 
 .container-contact_page {
   height: auto;
-  width: 98.5vw;
+  width: 100vw;
+  padding-bottom: 3rem;
   background-color: black;
   border-top: #ff6701 0.5rem solid;
 }
