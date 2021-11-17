@@ -143,6 +143,7 @@ body {
   display: flex;
   align-content: center;
   justify-content: space-evenly;
+  text-align: center;
 }
 .project_button {
   margin: auto;
@@ -151,6 +152,7 @@ body {
   font-family: pixelfont;
   font-size: 4rem;
   font-weight: 700;
+  text-align: center;
   background-color: #fcecdd;
   border-radius: 10rem;
   border: 1rem solid #ff6701;
@@ -436,5 +438,8 @@ input[type="button"].fcf-btn-block {
   }
   .container_contact-form {
     width: 100%;
+  }
+  html {
+    font-size: 8px;
   }
 }
