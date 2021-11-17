@@ -11,6 +11,7 @@ heavy oj: #ff6701
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -140,10 +141,11 @@ body {
 *****************************************************************/
 #projects {
   display: flex;
+  align-content: center;
+  justify-content: space-evenly;
 }
 .project_button {
-  display: inline-block;
-  margin: 20rem 0 0 25%;
+  margin: auto;
   width: 15rem;
   height: 15rem;
   font-family: pixelfont;
@@ -221,6 +223,7 @@ body {
 }
 .text_about {
   text-align: center;
+  font-style: italic;
   font-size: 2rem;
   width: 50%;
   color: black;
@@ -404,6 +407,34 @@ input[type="button"].fcf-btn-block {
 @media only screen and (max-width: 1300px) {
   html {
     font-size: 12px;
-    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .about_shape {
+    flex-direction: column-reverse;
+
+    justify-items: center;
+  }
+  .text_about {
+    width: 100%;
+  }
+  .author {
+    width: 10rem;
+    height: 10rem;
+    float: top;
+  }
+  .container_contact-form {
+    width: 80%;
+  }
+  #projects {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-menu {
+    margin-top: -1rem;
+  }
+  .container_contact-form {
+    width: 100%;
   }
 }
