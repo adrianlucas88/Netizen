@@ -14,7 +14,7 @@ html {
   overflow-x: hidden;
 }
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(#fcecddd3, #fcecddd3),
     url(Images/bg-grid.gif) 50% 0 repeat;
   margin: 0;
   padding: 0;
@@ -28,7 +28,7 @@ body {
   font-family: pixelfont;
   text-align: center;
   font-size: 6rem;
-  color: whitesmoke;
+  color: white;
   width: 100%;
   height: 100%;
   padding-top: 2rem;
